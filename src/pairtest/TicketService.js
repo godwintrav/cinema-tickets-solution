@@ -10,7 +10,7 @@ export default class TicketService {
    */
 
   purchaseTickets(accountId, ...ticketTypeRequests) {
-    const constraintChecker = new ConstraintsChecker(ticketTypeRequests);
+    const constraintChecker = new ConstraintsChecker(...ticketTypeRequests);
 
     if (!Number.isInteger(accountId) || accountId < 1) {
       throw new InvalidPurchaseException("Invalid AccountId");

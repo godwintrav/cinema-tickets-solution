@@ -6,7 +6,7 @@ export default class ConstraintsChecker {
   #adultType;
   #infantType;
 
-  constructor(ticketTypeRequests) {
+  constructor(...ticketTypeRequests) {
     this.#ticketTypeRequests = ticketTypeRequests;
     this.#ticketTypesData = new TicketTypesData();
     this.#adultType = this.#ticketTypesData.getAdultType();
