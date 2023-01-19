@@ -34,12 +34,11 @@ export default class TicketService {
       );
     }
     const totalTicketsAmount = this.#getTotalAmount(ticketTypeRequests);
-    console.log(totalTicketsAmount);
     this.#payAmount(accountId, totalTicketsAmount);
 
     const totalSeats = this.#getTotalSeats(ticketTypeRequests);
-    console.log(totalSeats);
     this.#reserveSeats(accountId, totalSeats);
+
     return { seats: totalSeats, amount: totalTicketsAmount };
   }
 
@@ -72,14 +71,3 @@ export default class TicketService {
     return totalAmount;
   }
 }
-
-// const ticketTypeRequest1 = new TicketTypeRequest("CHILD", 1);
-// const ticketTypeRequest2 = new TicketTypeRequest("ADULT", 1);
-// const ticketTypeRequest3 = new TicketTypeRequest("INFANT", 1);
-
-// const ticketService = new TicketService().purchaseTickets(
-//   1,
-//   ticketTypeRequest1,
-//   ticketTypeRequest2,
-//   ticketTypeRequest3
-// );
